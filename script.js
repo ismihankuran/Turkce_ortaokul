@@ -1,62 +1,105 @@
-// Quiz Data
-const quizData = [
-    {
-        question: "Aşağıdaki cümlelerin hangisinde 'isim-fiil' kullanılmıştır?",
-        options: [
-            "Koşarak eve gitti.",
-            "Gelen gideni aratır.",
-            "Kitap okumayı çok severim.",
-            "Güle güle kullanın."
-        ],
-        correct: 2, // Index of correct option (0-based)
-        explanation: "C şıkkındaki 'okumayı' kelimesi -ma/-me isim-fiil ekini almıştır. A: Zarf-fiil, B: Sıfat-fiil, D: Zarf-fiil."
-    },
-    {
-        question: "'Tanıdık yüzler görmek insanı mutlu ediyor.' cümlesindeki 'tanıdık' sözcüğü hangi tür fiilimsidir?",
-        options: [
-            "İsim-Fiil",
-            "Sıfat-Fiil",
-            "Zarf-Fiil",
-            "Çekimli Fiil"
-        ],
-        correct: 1,
-        explanation: "'Tanıdık' kelimesi -dık/-dik sıfat-fiil ekini alarak 'yüzler' ismini nitelemiştir."
-    },
-    {
-        question: "Hangisinde zarf-fiil (bağ-fiil) YOKTUR?",
-        options: [
-            "Gelir gelmez seni sordu.",
-            "Ders çalışıp uyudu.",
-            "Okula giderken arkadaşını gördü.",
-            "Sararmış yapraklar döküldü."
-        ],
-        correct: 3,
-        explanation: "D şıkkındaki 'sararmış' kelimesi sıfat-fiildir (-mış). Diğer şıklarda: A (gelir gelmez -remz), B (-ıp), C (-ken) zarf-fiildir."
-    },
-    {
-        question: "Aşağıdaki eklerden hangisi 'Sıfat-Fiil' eklerinden biri DEĞİLDİR?",
-        options: [
-            "-an",
-            "-ası",
-            "-mak",
-            "-mez"
-        ],
-        correct: 2,
-        explanation: "-mak eki Mayışmak şifresinden hatırlayacağımız üzere İsim-Fiil ekidir."
-    },
-    {
-        question: "'Durmaksızın konuşuyordu.' cümlesindeki fiilimsinin türü nedir?",
-        options: [
-            "Zarf-Fiil",
-            "Sıfat-Fiil",
-            "İsim-Fiil",
-            "Hiçbiri"
-        ],
-        correct: 0,
-        explanation: "'-maksızın' eki durum bildiren bir zarf-fiil ekidir."
-    }
-];
+// Quiz Data grouped by topic
+const allQuizData = {
+    'fiilimsiler': [
+        {
+            question: "'Sınavı kazanmak için çok çalıştı.' cümlesindeki fiilimsinin türü nedir?",
+            options: ["Sıfat-Fiil", "Zarf-Fiil", "İsim-Fiil", "Çekimli Fiil"],
+            correct: 2,
+            explanation: "'kazanmak' kelimesi -mak ekini almıştır. Kodlama: MAYIŞMAK -> İsim-Fiil."
+        },
+        {
+            question: "Aşağıdakilerin hangisinde Sıfat-Fiil kullanılmıştır?",
+            options: ["Koşarak eve gitti.", "Güler yüzlü bir insandı.", "Bakışları beni korkuttu.", "Gelip hemen gitti."],
+            correct: 1,
+            explanation: "'Güler' kelimesindeki -er eki sıfat-fiildir. (Anası MEZAR dikecekmiş)."
+        },
+        {
+            question: "'Dönülmez akşamın ufkundayız.' cümlesindeki 'dönülmez' sözcüğü hangi fiilimsidir?",
+            options: ["Sıfat-Fiil (-mez)", "İsim-Fiil", "Zarf-Fiil", "Fiilimsi değildir"],
+            correct: 0,
+            explanation: "-mez eki sıfat-fiil ekidir ve 'akşam' ismini nitelemiştir."
+        },
+        {
+            question: "'Gidip de gelmemek var.' cümlesinde kaç tane fiilimsi vardır?",
+            options: ["1", "2", "3", "4"],
+            correct: 1,
+            explanation: "'Gidip' (Zarf-fiil) ve 'gelmemek' (İsim-fiil) olmak üzere 2 tane fiilimsi vardır."
+        },
+        {
+            question: "Zarf-fiil ekleri için kullanılan kodlama hangisidir?",
+            options: ["MAYIŞMAK", "ANASI MEZAR DİKECEKMİŞ", "KENYALI ASİYE...", "FISTIKÇI ŞAHAP"],
+            correct: 2,
+            explanation: "Zarf-fiiller 'Kenyalı Asiye...' kodlamasıyla akılda tutulur."
+        }
+    ],
+    'cumle-ogeleri': [
+        {
+            question: "'Babam bahçedeki ağaçları suladı.' cümlesinin Yüklemi hangisidir?",
+            options: ["Babam", "Bahçedeki", "Ağaçları", "Suladı"],
+            correct: 3,
+            explanation: "Yüklem iş, oluş, hareket bildirir. Burada yapılan iş 'suladı'dır."
+        },
+        {
+            question: "'Öğrenciler sessizce öğretmeni dinliyordu.' cümlesinde 'sessizce' sözcüğü hangi ögedir?",
+            options: ["Özne", "Belirtili Nesne", "Zarf Tamlayıcısı", "Yer Tamlayıcısı"],
+            correct: 2,
+            explanation: "'Nasıl dinliyordu?' sorusuna cevap verdiği için Zarf Tamlayıcısıdır."
+        },
+        {
+            question: "Hangi cümlede Gizli Özne vardır?",
+            options: ["Ahmet okula geldi.", "Yarın sinemaya gideceğiz.", "Kediler sütü sever.", "Hava çok güzel."],
+            correct: 1,
+            explanation: "'Gideceğiz' yükleminin öznesi 'Biz'dir ancak cümlede yazılmamıştır (Gizli Özne)."
+        },
+        {
+            question: "Yer Tamlayıcısı (Dolaylı Tümleç) hangi sorulara cevap verir?",
+            options: ["Ne, Neyi", "Nasıl, Ne zaman", "Kime, Nerede, Nereden", "Kim, Ne"],
+            correct: 2,
+            explanation: "-e, -de, -den eklerini alan sorular Yer Tamlayıcısını buldurur."
+        },
+        {
+            question: "'Kitabı masaya bıraktım.' cümlesinde 'masaya' hangi ögedir?",
+            options: ["Nesne", "Yer Tamlayıcısı", "Zarf Tamlayıcısı", "Özne"],
+            correct: 1,
+            explanation: "'Nereye bıraktım?' -> 'Masaya'. Yönelme bildirdiği için Yer Tamlayıcısıdır."
+        }
+    ],
+    'yazim-kurallari': [
+        {
+            question: "Aşağıdaki cümlelerin hangisinde 'de/da' yazımı yanlıştır?",
+            options: ["Sen de bizimle gel.", "Ev de kimse yoktu.", "Kitabım okulda kalmış.", "Bu soruyu Ahmet de bildi."],
+            correct: 1,
+            explanation: "Burada bulunma anlamı vardır, 'Evde' şeklinde bitişik yazılmalıydı. Bağlaç değildir."
+        },
+        {
+            question: "'Ki' ekinin yazımı hangisinde doğrudur?",
+            options: ["Duydumki unutmuşsun.", "Oysaki seni çok sevmiştim.", "Ev deki hesap çarşıya uymaz.", "Sen ki dünyalara değersin (Bitişik)"],
+            correct: 1,
+            explanation: "SOMBAHÇEM kodlamasındaki kelimelerden biri olduğu için 'Oysaki' bitişik yazılır."
+        },
+        {
+            question: "Hangisinde büyük harf hatası yapılmıştır?",
+            options: ["Kedimiz Pamuk çok tatlı.", "Yarın Ankara'ya gideceğiz.", "İngilizce dersini seviyorum.", "Kuzey anadolu fay hattı aktiftir."],
+            correct: 3,
+            explanation: "Kuzey Anadolu özel isimdir, her iki kelime de büyük harfle başlamalıdır."
+        },
+        {
+            question: "Bağlaç olan 'de/da' cümleden çıkarıldığında ne olur?",
+            options: ["Anlam tamamen bozulur.", "Anlam daralabilir ama bozulmaz.", "Kelime anlamı değişir.", "Cümle anlamsızlaşır."],
+            correct: 1,
+            explanation: "Bağlaç olan de/da cümleden çıkarılabilir, anlam bozulmaz."
+        },
+        {
+            question: "Hangisi SOMBAHÇEM kodlamasında (bitişik yazılan ki'ler) yer ALMAZ?",
+            options: ["Sanki", "Mademki", "Belki", "Çünküki"],
+            correct: 3,
+            explanation: "Sanki, Oysaki, Mademki, Belki, Halbuki, Çünkü, Eğerki, Meğerki (SOMBAHÇEM)."
+        }
+    ]
+};
 
+let currentTopic = 'fiilimsiler';
+let currentQuizData = allQuizData['fiilimsiler'];
 let currentQuestion = 0;
 let score = 0;
 
@@ -68,18 +111,94 @@ const feedbackArea = document.getElementById('feedback-area');
 const feedbackMessage = document.getElementById('feedback-message');
 const feedbackDetail = document.getElementById('feedback-detail');
 const nextBtn = document.getElementById('next-btn');
+const restartBtn = document.getElementById('restart-btn');
 const currentQuestionNum = document.getElementById('current-question');
 const scoreDisplay = document.getElementById('score-display');
 const quizContainer = document.getElementById('quiz-container');
 const resultScreen = document.getElementById('result-screen');
 const finalScore = document.getElementById('final-score');
 
-// Init Quiz
+// Navigation Logic
+const navItems = document.querySelectorAll('.nav-item, .mobile-nav-item');
+const topicSections = document.querySelectorAll('.topic-section');
+const mobileMenu = document.getElementById("mobile-menu");
+const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+
+// Mobile Menu Toggle
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
+}
+
+function switchTopic(topicId) {
+    // 1. Update Active Nav State
+    navItems.forEach(item => {
+        if (item.getAttribute('data-target') === topicId) {
+            item.classList.add('active');
+            // Also styling for mobile
+            if (item.classList.contains('mobile-nav-item')) {
+                item.classList.add('bg-indigo-50', 'text-indigo-600', 'pl-6');
+            }
+        } else {
+            item.classList.remove('active');
+            if (item.classList.contains('mobile-nav-item')) {
+                item.classList.remove('bg-indigo-50', 'text-indigo-600', 'pl-6');
+            }
+        }
+    });
+
+    // 2. Show/Hide Content Sections
+    const targetSection = document.getElementById(`content-${topicId}`);
+    if (targetSection) {
+        topicSections.forEach(sec => sec.classList.add('hidden'));
+        targetSection.classList.remove('hidden');
+
+        // Update Current Topic & Quiz Data
+        currentTopic = topicId;
+        currentQuizData = allQuizData[topicId];
+
+        // Reset Quiz
+        resetQuiz();
+
+        // Scroll to top smoothly
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+        // Fallback for "Ses Bilgisi" which has no content yet
+        showToast('🚧 Bu konu henüz hazırlanıyor öğretmenim!');
+    }
+}
+
+navItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+        const target = e.target.getAttribute('data-target');
+        switchTopic(target);
+
+        // Close mobile menu
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+});
+
+
+// Quiz Logic
+function resetQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    quizContainer.style.display = 'block';
+    resultScreen.classList.add('hidden');
+    loadQuestion();
+}
+
 function loadQuestion() {
-    const data = quizData[currentQuestion];
+    if (!currentQuizData || currentQuizData.length === 0) return;
+
+    const data = currentQuizData[currentQuestion];
 
     // Update UI
-    currentQuestionNum.textContent = currentQuestion + 1;
+    currentQuestionNum.textContent = `${currentQuestion + 1}/${currentQuizData.length}`;
+    scoreDisplay.textContent = `PUAN: ${score}`;
     questionText.textContent = data.question;
     optionsContainer.innerHTML = '';
 
@@ -100,12 +219,12 @@ function loadQuestion() {
 }
 
 function checkAnswer(selectedIndex, selectedBtn) {
-    const data = quizData[currentQuestion];
+    const data = currentQuizData[currentQuestion];
     const options = optionsContainer.children;
 
     // Disable all options
     for (let btn of options) {
-        btn.classList.add('disabled'); // Add custom disabled style
+        btn.classList.add('disabled');
         btn.onclick = null;
     }
 
@@ -113,7 +232,9 @@ function checkAnswer(selectedIndex, selectedBtn) {
         // CORRECT
         selectedBtn.classList.add('correct');
         selectedBtn.querySelector('span').classList.add('bg-green-200', 'text-green-700', 'border-green-300');
-        score += 20;
+        score += 20; // Assuming 5 questions per topic approx (100 total) or can adjust. 
+        // Or if varying number of questions: score += Math.floor(100 / currentQuizData.length);
+
         scoreDisplay.textContent = `PUAN: ${score}`;
 
         feedbackMessage.textContent = "Harikasın! Doğru Cevap 🎉";
@@ -160,20 +281,26 @@ function checkAnswer(selectedIndex, selectedBtn) {
 
 nextBtn.onclick = () => {
     currentQuestion++;
-    if (currentQuestion < quizData.length) {
+    if (currentQuestion < currentQuizData.length) {
         loadQuestion();
     } else {
         showResults();
     }
 };
 
+if (restartBtn) {
+    restartBtn.onclick = () => {
+        resetQuiz();
+    };
+}
+
 function showResults() {
     quizContainer.style.display = 'none';
     resultScreen.classList.remove('hidden');
     finalScore.textContent = score;
 
-    // Big Celebration Confetti
-    if (score > 60) {
+    // Celebration
+    if (score > (currentQuizData.length * 20 * 0.5)) { // Passed > 50%
         var duration = 3 * 1000;
         var end = Date.now() + duration;
 
@@ -200,47 +327,18 @@ function showResults() {
     }
 }
 
-// Mobile Menu Toggle
-const btn = document.getElementById("mobile-menu-btn");
-const menu = document.getElementById("mobile-menu");
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'fixed bottom-4 right-4 bg-gray-800 text-white px-6 py-3 rounded-xl shadow-2xl z-50 animate-fade-in-down border-l-4 border-fun-yellow';
+    toast.innerHTML = message;
+    document.body.appendChild(toast);
 
-if (btn && menu) {
-    btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-    });
+    setTimeout(() => {
+        toast.style.transition = 'opacity 0.5s';
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 500);
+    }, 3000);
 }
 
-// Navigation Logic
-document.querySelectorAll('.nav-item, .mobile-nav-item').forEach(item => {
-    item.addEventListener('click', (e) => {
-        // Remove active class from all
-        document.querySelectorAll('.nav-item, .mobile-nav-item').forEach(nav => nav.classList.remove('active'));
-        // Add to clicked
-        e.target.classList.add('active');
-
-        const target = e.target.getAttribute('data-target');
-        if (target === 'fiilimsiler') {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-            // Toast notification for upcoming content
-            const toast = document.createElement('div');
-            toast.className = 'fixed bottom-4 right-4 bg-gray-800 text-white px-6 py-3 rounded-xl shadow-2xl z-50 animate-fade-in-down';
-            // toast.style.animation = 'fadeInDown 0.5s ease-out reverse'; // Removed incorrect manual animation
-            toast.innerHTML = '🚧 Bu konu henüz hazırlanıyor öğretmenim!';
-            document.body.appendChild(toast);
-
-            // Remove after 3s
-            setTimeout(() => {
-                toast.remove();
-            }, 3000);
-        }
-
-        // Close mobile menu if open
-        if (menu && !menu.classList.contains('hidden')) {
-            menu.classList.add('hidden');
-        }
-    });
-});
-
-// Start
-loadQuestion();
+// Start with Fiilimsiler
+resetQuiz();

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eğlenceli Türkçe - Fiilimsiler</title>
+    <title>Eğlenceli Türkçe - Ortaokul</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Nunito:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <!-- Confetti JS -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <!-- Custom CSS -->
@@ -32,6 +35,7 @@
         }
     </script>
 </head>
+
 <body class="bg-blue-50 font-body text-gray-800 selection:bg-fun-yellow selection:text-black">
 
     <!-- Navbar -->
@@ -39,23 +43,29 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <div class="flex items-center gap-3 group cursor-pointer hover:scale-105 transition-transform duration-300">
-                    <div class="bg-fun-yellow p-2 rounded-xl text-3xl shadow-md group-hover:rotate-12 transition-transform">📚</div>
-                    <span class="font-title font-bold text-3xl bg-gradient-to-r from-fun-blue to-fun-purple text-transparent bg-clip-text">Türkçe Defterim</span>
+                <div
+                    class="flex items-center gap-3 group cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <div
+                        class="bg-fun-yellow p-2 rounded-xl text-3xl shadow-md group-hover:rotate-12 transition-transform">
+                        📚</div>
+                    <span
+                        class="font-title font-bold text-3xl bg-gradient-to-r from-fun-blue to-fun-purple text-transparent bg-clip-text">Türkçe
+                        Defterim</span>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-6">
                     <button class="nav-item active" data-target="fiilimsiler">Fiilimsiler</button>
                     <button class="nav-item" data-target="cumle-ogeleri">Cümlenin Ögeleri</button>
-                    <button class="nav-item" data-target="ses-bilgisi">Ses Bilgisi</button>
                     <button class="nav-item" data-target="yazim-kurallari">Yazım Kuralları</button>
+                    <button class="nav-item" data-target="ses-bilgisi">Ses Bilgisi</button>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="outline-none mobile-menu-button">
-                        <svg class="w-8 h-8 text-fun-purple" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="w-8 h-8 text-fun-purple" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2.5" viewBox="0 0 24 24" stroke="currentColor">
                             <path d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
@@ -66,101 +76,265 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t-2 border-dashed border-gray-200 p-4 space-y-2">
             <button class="mobile-nav-item active w-full text-left" data-target="fiilimsiler">Fiilimsiler</button>
             <button class="mobile-nav-item w-full text-left" data-target="cumle-ogeleri">Cümlenin Ögeleri</button>
-            <button class="mobile-nav-item w-full text-left" data-target="ses-bilgisi">Ses Bilgisi</button>
             <button class="mobile-nav-item w-full text-left" data-target="yazim-kurallari">Yazım Kuralları</button>
+            <button class="mobile-nav-item w-full text-left" data-target="ses-bilgisi">Ses Bilgisi</button>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="max-w-4xl mx-auto px-4 py-8">
-        
-        <!-- Header Section -->
-        <header class="text-center mb-12 animate-fade-in-down">
-            <h1 class="font-title text-5xl md:text-6xl font-extrabold text-fun-purple drop-shadow-sm mb-4">Fiilimsiler (Eylemsiler)</h1>
-            <p class="text-xl text-gray-600 bg-white inline-block px-6 py-2 rounded-full shadow-sm border-2 border-dashed border-fun-blue">
-                Fiil gibi görünen ama fiil olmayan yaramaz kelimeler! 😉
-            </p>
-        </header>
+    <main class="max-w-6xl mx-auto px-4 py-8">
 
-        <!-- Topic Cards -->
-        <div class="grid md:grid-cols-3 gap-6 mb-16">
-            
-            <!-- İsim Fiil -->
-            <div class="topic-card bg-white rounded-3xl p-6 shadow-xl border-b-8 border-fun-pink hover:-translate-y-2 transition-transform duration-300">
-                <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center text-3xl mb-4 text-red-500 shadow-inner">🍎</div>
-                <h3 class="font-title text-2xl font-bold text-gray-800 mb-3">İsim Fiil</h3>
-                <p class="text-gray-600 mb-4 text-sm">Fiillere getirilen eklerle yapılır, artık isim gibi kullanılır.</p>
-                <div class="bg-red-50 p-3 rounded-xl border border-red-200">
-                    <span class="block text-xs font-bold text-red-400 uppercase tracking-wider mb-1">ŞİFRE</span>
-                    <strong class="text-lg text-red-600 block">-MA -IŞ -MAK</strong>
-                    <div class="text-xs text-red-400 mt-1 italic">(Mayışmak)</div>
+        <!-- FİİLİMSİLER BÖLÜMÜ -->
+        <div id="content-fiilimsiler" class="topic-section">
+            <header class="text-center mb-12 animate-fade-in-down">
+                <h1 class="font-title text-5xl md:text-6xl font-extrabold text-fun-purple drop-shadow-sm mb-4">
+                    Fiilimsiler (Eylemsiler)</h1>
+                <p
+                    class="text-xl text-gray-600 bg-white inline-block px-6 py-2 rounded-full shadow-sm border-2 border-dashed border-fun-blue">
+                    Öğrencilerin en çok karıştırdığı ama şifrelerle en kolay çözülen konu! 😉
+                </p>
+            </header>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-16">
+                <!-- İsim Fiil -->
+                <div
+                    class="topic-card bg-white rounded-3xl p-6 shadow-xl border-b-8 border-fun-pink hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center text-3xl mb-4 text-red-500 shadow-inner">
+                        🍎</div>
+                    <h3 class="font-title text-2xl font-bold text-gray-800 mb-3">İsim Fiil</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Fiillerin adı olur. Fiil kök veya gövdelerine gelir.</p>
+                    <div class="bg-red-50 p-3 rounded-xl border border-red-200">
+                        <span class="block text-xs font-bold text-red-400 uppercase tracking-wider mb-1">ŞİFRE</span>
+                        <strong class="text-lg text-red-600 block">-MA -IŞ -MAK</strong>
+                        <div class="text-xs text-red-400 mt-1 italic">(Kodlama: MAYIŞMAK)</div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Sıfat Fiil -->
-            <div class="topic-card bg-white rounded-3xl p-6 shadow-xl border-b-8 border-fun-blue hover:-translate-y-2 transition-transform duration-300">
-                <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-4 text-blue-500 shadow-inner">🧢</div>
-                <h3 class="font-title text-2xl font-bold text-gray-800 mb-3">Sıfat Fiil</h3>
-                <p class="text-gray-600 mb-4 text-sm">Fiili niteleyen sıfat görevindeki kelimelerdir.</p>
-                <div class="bg-blue-50 p-3 rounded-xl border border-blue-200">
-                    <span class="block text-xs font-bold text-blue-400 uppercase tracking-wider mb-1">ŞİFRE</span>
-                    <strong class="text-sm text-blue-600 block leading-tight">-AN -ASI -MEZ -AR -DİK -ECEK -MİŞ</strong>
-                    <div class="text-xs text-blue-400 mt-1 italic">(Anası mezar dikecekmiş)</div>
+                <!-- Sıfat Fiil -->
+                <div
+                    class="topic-card bg-white rounded-3xl p-6 shadow-xl border-b-8 border-fun-blue hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-4 text-blue-500 shadow-inner">
+                        🧢</div>
+                    <h3 class="font-title text-2xl font-bold text-gray-800 mb-3">Sıfat Fiil (Ortaç)</h3>
+                    <p class="text-gray-600 mb-4 text-sm">İsmi niteler.</p>
+                    <div class="bg-blue-50 p-3 rounded-xl border border-blue-200">
+                        <span class="block text-xs font-bold text-blue-400 uppercase tracking-wider mb-1">ŞİFRE</span>
+                        <strong class="text-sm text-blue-600 block leading-tight">-AN -ASI -MEZ -AR -DİK -ECEK
+                            -MİŞ</strong>
+                        <div class="text-xs text-blue-400 mt-1 italic">(ANASI MEZAR DİKECEK MİŞ)</div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Zarf Fiil -->
-            <div class="topic-card bg-white rounded-3xl p-6 shadow-xl border-b-8 border-fun-yellow hover:-translate-y-2 transition-transform duration-300">
-                <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center text-3xl mb-4 text-yellow-500 shadow-inner">🚀</div>
-                <h3 class="font-title text-2xl font-bold text-gray-800 mb-3">Zarf Fiil</h3>
-                <p class="text-gray-600 mb-4 text-sm">Fiili zaman veya durum yönünden tamamlar.</p>
-                <div class="bg-yellow-50 p-3 rounded-xl border border-yellow-200">
-                    <span class="block text-xs font-bold text-yellow-600 uppercase tracking-wider mb-1">ŞİFRE</span>
-                    <strong class="text-sm text-yellow-700 block leading-tight">-KEN -YALI -MADAN -İNCE -İP -ARAK...</strong>
-                    <div class="text-xs text-yellow-600 mt-1 italic">(Kenyalı Madan...)</div>
+                <!-- Zarf Fiil -->
+                <div
+                    class="topic-card bg-white rounded-3xl p-6 shadow-xl border-b-8 border-fun-yellow hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center text-3xl mb-4 text-yellow-500 shadow-inner">
+                        🚀</div>
+                    <h3 class="font-title text-2xl font-bold text-gray-800 mb-3">Zarf Fiil (Ulaç)</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Zaman veya durum bildirir.</p>
+                    <div class="bg-yellow-50 p-3 rounded-xl border border-yellow-200">
+                        <span class="block text-xs font-bold text-yellow-600 uppercase tracking-wider mb-1">ŞİFRE</span>
+                        <strong class="text-sm text-yellow-700 block leading-tight">-ken -alı -madan -ince -ip
+                            -arak...</strong>
+                        <div class="text-xs text-yellow-600 mt-1 italic">(Kenyalı Asiye...)</div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Quiz Section -->
-        <section id="quiz-area" class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden ring-8 ring-white/50">
-            <div class="absolute top-0 left-0 w-full h-4 bg-gradient-to-r from-fun-blue via-fun-purple to-fun-pink"></div>
-            
+        <!-- CÜMLENİN ÖGELERİ BÖLÜMÜ -->
+        <div id="content-cumle-ogeleri" class="topic-section hidden">
+            <header class="text-center mb-12 animate-fade-in-down">
+                <h1 class="font-title text-5xl md:text-6xl font-extrabold text-fun-green drop-shadow-sm mb-4">Cümlenin
+                    Ögeleri</h1>
+                <p
+                    class="text-xl text-gray-600 bg-white inline-block px-6 py-2 rounded-full shadow-sm border-2 border-dashed border-fun-green">
+                    Altın Kural: Önce YÜKLEM, sonra ÖZNE bulunur! 🕵️‍♂️
+                </p>
+            </header>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <!-- Temel Ögeler -->
+                <div
+                    class="topic-card bg-white rounded-3xl p-6 shadow-xl border-b-8 border-green-500 hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-3xl mb-4 text-green-500 shadow-inner">
+                        🏠</div>
+                    <h3 class="font-title text-2xl font-bold text-gray-800 mb-3">Temel Ögeler</h3>
+                    <div class="space-y-3">
+                        <div class="bg-green-50 p-3 rounded-xl border border-green-200">
+                            <strong class="block text-green-700">Yüklem</strong>
+                            <p class="text-xs text-green-600">İş, oluş, hareket (Yargı)</p>
+                        </div>
+                        <div class="bg-green-50 p-3 rounded-xl border border-green-200">
+                            <strong class="block text-green-700">Özne</strong>
+                            <p class="text-xs text-green-600">İşi yapan (Kim? Ne?)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nesneler -->
+                <div
+                    class="topic-card bg-white rounded-3xl p-6 shadow-xl border-b-8 border-blue-400 hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-4 text-blue-500 shadow-inner">
+                        📦</div>
+                    <h3 class="font-title text-2xl font-bold text-gray-800 mb-3">Nesneler</h3>
+                    <div class="space-y-3">
+                        <div class="bg-blue-50 p-3 rounded-xl border border-blue-200">
+                            <strong class="block text-blue-700">Belirtili Nesne</strong>
+                            <p class="text-xs text-blue-600">Neyi? Kimi?</p>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded-xl border border-blue-200">
+                            <strong class="block text-blue-700">Belirtisiz Nesne</strong>
+                            <p class="text-xs text-blue-600">Ne? (Özneden sonra)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yer Tamlayıcısı -->
+                <div
+                    class="topic-card bg-white rounded-3xl p-6 shadow-xl border-b-8 border-purple-400 hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mb-4 text-purple-500 shadow-inner">
+                        📍</div>
+                    <h3 class="font-title text-2xl font-bold text-gray-800 mb-3">Yer Tamlayıcısı</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Yönelme, bulunma, ayrılma bildirir.</p>
+                    <div class="bg-purple-50 p-3 rounded-xl border border-purple-200">
+                        <span
+                            class="block text-xs font-bold text-purple-400 uppercase tracking-wider mb-1">SORULAR</span>
+                        <strong class="text-sm text-purple-600 block leading-tight">-E, -DE, -DEN</strong>
+                        <div class="text-xs text-purple-400 mt-1">Kime? Nerede? Nereden?</div>
+                    </div>
+                </div>
+
+                <!-- Zarf Tamlayıcısı -->
+                <div
+                    class="topic-card bg-white rounded-3xl p-6 shadow-xl border-b-8 border-yellow-400 hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center text-3xl mb-4 text-yellow-500 shadow-inner">
+                        ⏰</div>
+                    <h3 class="font-title text-2xl font-bold text-gray-800 mb-3">Zarf Tamlayıcısı</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Zaman, durum, miktar bildirir.</p>
+                    <div class="bg-yellow-50 p-3 rounded-xl border border-yellow-200">
+                        <span
+                            class="block text-xs font-bold text-yellow-500 uppercase tracking-wider mb-1">SORULAR</span>
+                        <strong class="text-sm text-yellow-700 block leading-tight">Nasıl? Ne zaman? Ne kadar?</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- YAZIM KURALLARI BÖLÜMÜ -->
+        <div id="content-yazim-kurallari" class="topic-section hidden">
+            <header class="text-center mb-12 animate-fade-in-down">
+                <h1 class="font-title text-5xl md:text-6xl font-extrabold text-pink-500 drop-shadow-sm mb-4">Yazım
+                    Kuralları</h1>
+                <p
+                    class="text-xl text-gray-600 bg-white inline-block px-6 py-2 rounded-full shadow-sm border-2 border-dashed border-pink-400">
+                    Gözden kaçan detaylara dikkat! 🧐
+                </p>
+            </header>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-16">
+                <!-- DE/DA Yazımı -->
+                <div
+                    class="topic-card bg-white rounded-3xl p-6 shadow-xl border-b-8 border-indigo-400 hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center text-3xl mb-4 text-indigo-500 shadow-inner">
+                        ✍️</div>
+                    <h3 class="font-title text-2xl font-bold text-gray-800 mb-3">"DE" ve "DA"</h3>
+                    <div class="space-y-3">
+                        <div class="bg-indigo-50 p-3 rounded-xl border border-indigo-200">
+                            <strong class="block text-indigo-700">Bağlaç Olan (Ayrı)</strong>
+                            <p class="text-xs text-indigo-600">Cümleden çıkarınca anlam BOZULMAZ.</p>
+                        </div>
+                        <div class="bg-indigo-50 p-3 rounded-xl border border-indigo-200">
+                            <strong class="block text-indigo-700">Ek Olan (Bitişik)</strong>
+                            <p class="text-xs text-indigo-600">Cümleden çıkarınca anlam BOZULUR. (Bulunma)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kİ Yazımı -->
+                <div
+                    class="topic-card bg-white rounded-3xl p-6 shadow-xl border-b-8 border-orange-400 hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl mb-4 text-orange-500 shadow-inner">
+                        🔗</div>
+                    <h3 class="font-title text-2xl font-bold text-gray-800 mb-3">"Kİ" Yazımı</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Genellikle ayrı yazılır.</p>
+                    <div class="bg-orange-50 p-3 rounded-xl border border-orange-200">
+                        <span class="block text-xs font-bold text-orange-500 uppercase tracking-wider mb-1">İSTİSNA
+                            (Bitişik)</span>
+                        <strong class="text-lg text-orange-700 block">SOMBAHÇEM</strong>
+                        <div class="text-xs text-orange-600 mt-1 italic">Sanki, Oysaki, Mademki...</div>
+                    </div>
+                </div>
+
+                <!-- Büyük Harfler -->
+                <div
+                    class="topic-card bg-white rounded-3xl p-6 shadow-xl border-b-8 border-teal-400 hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-16 h-16 bg-teal-100 rounded-2xl flex items-center justify-center text-3xl mb-4 text-teal-500 shadow-inner">
+                        🅰️</div>
+                    <h3 class="font-title text-2xl font-bold text-gray-800 mb-3">Büyük Harfler</h3>
+                    <ul class="text-sm text-gray-600 list-disc list-inside space-y-2">
+                        <li>Kurum, kuruluş isimleri (Türk Dil Kurumu)</li>
+                        <li>Gezegen isimleri terimse (Dünya, Güneş)</li>
+                        <li>Özel isimler, İl, İlçe...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Quiz Section (Shared) -->
+        <section id="quiz-area"
+            class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden ring-8 ring-white/50">
+            <div class="absolute top-0 left-0 w-full h-4 bg-gradient-to-r from-fun-blue via-fun-purple to-fun-pink">
+            </div>
+
             <div class="text-center mb-10">
-                <span class="bg-indigo-100 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wide">Test Zamanı</span>
+                <span
+                    class="bg-indigo-100 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wide">Test
+                    Zamanı</span>
                 <h2 class="font-title text-4xl font-bold text-gray-800 mt-4">Neler Öğrendik? 🤓</h2>
             </div>
 
             <div id="quiz-container" class="max-w-2xl mx-auto">
-                <!-- Question Card -->
                 <div id="question-box" class="mb-8">
                     <div class="flex justify-between text-sm font-bold text-gray-400 mb-4 px-2">
-                        <span>SORU <span id="current-question">1</span>/5</span>
+                        <span>SORU <span id="current-question">1</span>/3</span>
                         <span id="score-display">PUAN: 0</span>
                     </div>
                     <div class="bg-gray-50 rounded-2xl p-6 border-2 border-dashed border-gray-200">
-                        <p id="question-text" class="text-xl md:text-2xl font-bold text-gray-800 text-center leading-relaxed">
+                        <p id="question-text"
+                            class="text-xl md:text-2xl font-bold text-gray-800 text-center leading-relaxed">
                             Soru yükleniyor...
                         </p>
                     </div>
                 </div>
 
-                <!-- Options -->
                 <div id="options-container" class="space-y-4">
-                    <!-- Options will be injected via JS -->
+                    <!-- Options injected via JS -->
                 </div>
 
-                <!-- Feedback Area (Hidden by default) -->
-                <div id="feedback-area" class="hidden mt-6 p-4 rounded-xl text-center transform transition-all duration-300 scale-95 opacity-0">
+                <div id="feedback-area"
+                    class="hidden mt-6 p-4 rounded-xl text-center transform transition-all duration-300 scale-95 opacity-0">
                     <p id="feedback-message" class="font-bold text-lg"></p>
                     <p id="feedback-detail" class="text-sm mt-1"></p>
-                    <button id="next-btn" class="mt-4 bg-fun-purple text-white px-8 py-3 rounded-xl font-bold hover:bg-purple-600 transition-colors shadow-lg hover:shadow-xl transform active:scale-95">
+                    <button id="next-btn"
+                        class="mt-4 bg-fun-purple text-white px-8 py-3 rounded-xl font-bold hover:bg-purple-600 transition-colors shadow-lg hover:shadow-xl transform active:scale-95">
                         Sonraki Soru ➔
                     </button>
                 </div>
             </div>
 
-            <!-- Result Screen (Hidden by default) -->
+            <!-- Result Screen -->
             <div id="result-screen" class="hidden text-center py-8">
                 <div class="text-6xl mb-6 animate-bounce">🏆</div>
                 <h3 class="font-title text-4xl font-bold text-gray-800 mb-4">Tebrikler!</h3>
@@ -170,7 +344,8 @@
                     <span class="text-xl font-bold text-gray-500 block">PUAN</span>
                 </div>
                 <div>
-                    <button onclick="location.reload()" class="bg-fun-blue text-white px-10 py-4 rounded-2xl font-bold text-lg shadow-xl hover:bg-blue-600 transition-all hover:-translate-y-1">
+                    <button id="restart-btn"
+                        class="bg-fun-blue text-white px-10 py-4 rounded-2xl font-bold text-lg shadow-xl hover:bg-blue-600 transition-all hover:-translate-y-1">
                         Tekrar Oyna 🔄
                     </button>
                 </div>
@@ -188,4 +363,5 @@
     <!-- Custom Script -->
     <script src="script.js"></script>
 </body>
+
 </html>
